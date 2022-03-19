@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "sidebar sidebar sidebar"
+    "content content content"
+    "footer footer footer";
+}
+
+.item {
+  width: 100%;
+  padding: 100px;
+  background-color: salmon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* 3. deklarasikan tiap-tiap class sesuai dengan layout pada grid-template-area menggunakan grid-area */
+.header {
+  grid-area: header;
+  background-color: aqua;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: burlywood;
+}
+
+.content {
+  grid-area: content;
+  background-color: bisque;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: cadetblue;
+}
+
+/* Responsive Breakpoint */
+@media screen and (min-width: 576px) {
+  .container {
+    /* 1. kita deklarasikan dulu area mana yang akan digunakan sebagai apa */
+    grid-template-areas:
+      "header header header"
+      "sidebar content content"
+      "sidebar content content"
+      "footer footer footer";
+    /* 2. TIDAK akan ada perubahan, karena ini hanya inisiasi penentuan layout dan belum ditempelkan ke tiap item */
+  }
+}
